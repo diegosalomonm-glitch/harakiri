@@ -33,22 +33,15 @@
 
   h1{margin-top:26px;margin-bottom:22px;font-weight:700;font-size:clamp(21px,6.1vw,30px);white-space:nowrap;line-height:1.05;text-align:center;letter-spacing:.005em}
 
-  /* ---- plataformas: mismo fondo claro, logo a la izquierda, nombre centrado ---- */
+  /* ---- plataformas: mismo fondo claro, cada una con su logo oficial ---- */
   .portales{display:flex;flex-direction:column;gap:12px}
-  a.p{display:grid;grid-template-columns:96px 1fr 96px;align-items:center;min-height:68px;padding:0 16px;
-      background:var(--blanco);color:var(--azul);border:1px solid var(--linea);border-radius:var(--r);
+  a.p{position:relative;display:flex;align-items:center;justify-content:center;min-height:72px;padding:0 48px;
+      background:var(--blanco);border:1px solid var(--linea);border-radius:var(--r);color:var(--azul);
       text-decoration:none;transition:transform .08s ease,border-color .2s ease,box-shadow .2s ease}
   a.p:hover{border-color:var(--azul);box-shadow:0 2px 0 var(--azul)}
   a.p:active{transform:scale(.985)}
-  a.p .marca{height:28px;display:flex;align-items:center;justify-content:flex-start}
-  a.p b{font-size:21px;font-weight:700;text-align:center;letter-spacing:.01em}
-  a.p .fl{justify-self:end;opacity:.45}
-  .puntos{display:flex}
-  .puntos i{width:20px;height:20px;border-radius:50%;margin-left:-4px}
-  .puntos i:first-child{margin-left:0}
-  .badge{height:28px;display:flex;align-items:center;background:#f5c518;color:#000;font:900 18px/1 'Arial Black',Arial,Helvetica,sans-serif;letter-spacing:-.4px;padding:0 7px;border-radius:4px}
-  .wm{height:28px;display:flex;align-items:center;font:700 10.5px/1 Arial,Helvetica,sans-serif;letter-spacing:.02em;color:#fff;background:#0f6ab4;padding:0 6px;border-radius:4px}
-  .wm em{font-style:normal;color:#ffd24d}
+  a.p img{display:block;width:auto}
+  a.p .fl{position:absolute;right:18px;top:50%;transform:translateY(-50%);opacity:.4}
 
   /* ---- correo ---- */
   .correo{margin-top:48px;background:var(--papel2);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea);padding:28px 0 30px}
@@ -75,20 +68,17 @@
 <main class="col">
   <h1>AYÚDANOS CON TU OPINIÓN</h1>
   <nav class="portales">
-    <a class="p lb" href="https://letterboxd.com/film/harakiri-i-miss-you/" rel="noopener">
-      <span class="marca"><span class="puntos"><i style="background:#ff8000"></i><i style="background:#00e054"></i><i style="background:#40bcf4"></i></span></span>
-      <b>Letterboxd</b>
-      <svg class="fl" width="18" height="18" viewBox="0 0 18 18"><path d="M6 3l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    <a class="p" href="https://letterboxd.com/film/harakiri-i-miss-you/" rel="noopener" aria-label="Letterboxd">
+      <img src="lb.png" alt="Letterboxd" style="height:25px">
+      <svg class="fl" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M6 3l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
     </a>
-    <a class="p imdb" href="https://www.imdb.com/title/tt37724886/" rel="noopener">
-      <span class="marca"><span class="badge">IMDb</span></span>
-      <b>IMDb</b>
-      <svg class="fl" width="18" height="18" viewBox="0 0 18 18"><path d="M6 3l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    <a class="p" href="https://www.imdb.com/title/tt37724886/" rel="noopener" aria-label="IMDb">
+      <img src="imdb.png" alt="IMDb" style="height:32px">
+      <svg class="fl" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M6 3l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
     </a>
-    <a class="p fa" href="https://www.filmaffinity.com/es/film531216.html" rel="noopener">
-      <span class="marca"><span class="wm">FILM<em>AFFINITY</em></span></span>
-      <b>FilmAffinity</b>
-      <svg class="fl" width="18" height="18" viewBox="0 0 18 18"><path d="M6 3l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    <a class="p" href="https://www.filmaffinity.com/es/film531216.html" rel="noopener" aria-label="FilmAffinity">
+      <img src="fa.png" alt="FilmAffinity" style="height:30px">
+      <svg class="fl" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M6 3l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
     </a>
   </nav>
 </main>
