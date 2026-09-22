@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#fdf6e4">
 <meta property="og:title" content="Harakiri, me haces falta">
 <meta property="og:description" content="Ayúdanos con tu opinión.">
-<meta property="og:image" content="foto.webp">
+<meta property="og:image" content="https://diegosalomonm-glitch.github.io/harakiri/hero.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -27,16 +27,11 @@
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
   .col{width:100%;max-width:var(--ancho);margin:0 auto;padding:0 20px}
 
-  /* ---- cabecera: foto en rojo y el titulo partiendo el borde, como en el flyer ---- */
-  .hero{position:relative;height:clamp(190px,52vw,250px);background:#2a0c07 url(foto.webp) center 55%/cover no-repeat}
-  .titulo{position:relative;height:0}
-  .titulo .tit{position:absolute;left:calc(50% - 150px);top:-118px;height:238px;filter:drop-shadow(-7px 3px 0 #100e12)}
-  .titulo .mhf{position:absolute;left:calc(50% - 22px);top:62px;width:190px}
-  .espacio{height:150px}
+  /* ---- cabecera: la misma composicion del poster ---- */
+  .hero{max-width:560px;margin:0 auto}
+  .hero img{display:block;width:100%;height:auto}
 
-  h1{font-weight:700;font-size:clamp(27px,7.6vw,34px);line-height:1.05;text-align:center;letter-spacing:.005em}
-  .sub{font-size:19px;line-height:1.3;text-align:center;margin:10px auto 26px;max-width:28ch}
-  .rotulo{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;text-align:center;margin-bottom:12px;opacity:.75}
+  h1{margin-top:26px;margin-bottom:22px;font-weight:700;font-size:clamp(21px,6.1vw,32px);white-space:nowrap;line-height:1.05;text-align:center;letter-spacing:.005em}
 
   /* ---- tarjetas: cada una con la estetica de su portal ---- */
   .portales{display:flex;flex-direction:column;gap:12px}
@@ -45,8 +40,7 @@
   a.p:active{transform:scale(.98)}
   a.p .marca{flex:none;width:92px;display:flex;align-items:center;justify-content:center}
   a.p .t{display:flex;flex-direction:column;gap:3px;flex:1}
-  a.p .t b{font-family:var(--serif);font-size:19px;font-weight:700;line-height:1.1}
-  a.p .t small{font-family:var(--mono);font-size:11px;letter-spacing:.03em;opacity:.78}
+  a.p .t b{font-family:var(--serif);font-size:21px;font-weight:700;line-height:1.1}
   a.p .fl{flex:none;opacity:.6}
   .lb{background:#14181c;color:#fff}
   .lb .puntos{display:flex}
@@ -58,10 +52,8 @@
   .fa .wm{font:700 12.5px/1 Arial,Helvetica,sans-serif;letter-spacing:.02em;color:#fff;background:#0f6ab4;padding:8px 7px;border-radius:4px}
   .fa .wm em{font-style:normal;color:#ffd24d}
 
-  .nota{font-family:var(--mono);font-size:11px;line-height:1.55;text-align:center;opacity:.7;margin:14px auto 0;max-width:38ch}
-
   /* ---- correo ---- */
-  .correo{margin-top:40px;background:var(--papel2);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea);padding:28px 0 30px}
+  .correo{margin-top:48px;background:var(--papel2);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea);padding:28px 0 30px}
   .correo h2{font-weight:700;font-size:24px;text-align:center;line-height:1.1}
   .correo p{text-align:center;font-size:17px;margin:6px auto 16px;max-width:30ch}
   form{display:flex;gap:8px}
@@ -73,67 +65,55 @@
   .legal{font-family:var(--mono);font-size:10.5px;line-height:1.5;text-align:center;opacity:.65;margin-top:10px}
   .ok{display:none;text-align:center;font-size:19px;font-style:italic;padding:8px 0}
 
-  footer{padding:30px 0 40px;text-align:center}
-  .logos{display:flex;align-items:center;justify-content:center;gap:26px;margin-bottom:18px}
+  footer.col{padding:64px 20px 56px;text-align:center}
+  .logos{display:flex;align-items:center;justify-content:center;gap:34px}
   .logos img{display:block}
-  footer .cred{font-family:var(--mono);font-size:11px;letter-spacing:.12em}
-  footer .cred span{display:block;letter-spacing:.03em;opacity:.7;margin-top:4px}
 </style>
 </head>
 <body>
 
-<header class="hero" role="img" aria-label="Fotograma de la película"></header>
-<div class="titulo" aria-hidden="true">
-  <img class="tit" src="titulo.webp" alt="">
-  <img class="mhf" src="mhf.webp" alt="">
-</div>
-<div class="espacio"></div>
+<header class="hero"><img src="hero.webp" width="1170" height="684" alt="Harakiri, me haces falta"></header>
 
 <main class="col">
   <h1>AYÚDANOS CON TU OPINIÓN</h1>
-  <p class="sub">Buena, mala o regular. Cada reseña ayuda a que la película llegue más lejos.</p>
-
-  <div class="rotulo">Elige dónde</div>
   <nav class="portales">
     <a class="p lb" href="https://letterboxd.com/film/harakiri-i-miss-you/" rel="noopener">
       <span class="marca"><span class="puntos"><i style="background:#ff8000"></i><i style="background:#00e054"></i><i style="background:#40bcf4"></i></span></span>
-      <span class="t"><b>Letterboxd</b><small>Abre la app si la tienes</small></span>
+      <span class="t"><b>Letterboxd</b></span>
       <svg class="fl" width="18" height="18" viewBox="0 0 18 18"><path d="M6 3l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
     </a>
     <a class="p imdb" href="https://www.imdb.com/title/tt37724886/" rel="noopener">
       <span class="marca"><span class="badge">IMDb</span></span>
-      <span class="t"><b>IMDb</b><small>Puntúala del 1 al 10</small></span>
+      <span class="t"><b>IMDb</b></span>
       <svg class="fl" width="18" height="18" viewBox="0 0 18 18"><path d="M6 3l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
     </a>
     <a class="p fa" href="https://www.filmaffinity.com/es/film531216.html" rel="noopener">
       <span class="marca"><span class="wm">FILM<em>AFFINITY</em></span></span>
-      <span class="t"><b>FilmAffinity</b><small>La más usada en España</small></span>
+      <span class="t"><b>FilmAffinity</b></span>
       <svg class="fl" width="18" height="18" viewBox="0 0 18 18"><path d="M6 3l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
     </a>
   </nav>
-  <p class="nota">Dentro de la ficha de la película, busca el botón para calificar y escribir tu reseña.</p>
 </main>
 
 <section class="correo">
   <div class="col">
     <h2>Sigue el recorrido</h2>
-    <p>Te avisamos de nuevas proyecciones y festivales. Nada más.</p>
+    <p>Te avisamos de nuevas proyecciones y festivales.</p>
     <form id="f" novalidate>
       <input type="email" id="e" name="entry.1233468363" placeholder="tu@correo.com" autocomplete="email" required aria-label="Correo electrónico">
       <button id="b" type="submit">Apuntarme</button>
     </form>
     <div class="ok" id="ok">Gracias. Nos vemos en la próxima.</div>
-    <div class="legal">Solo lo usamos para escribirte sobre la película. Puedes darte de baja cuando quieras.</div>
+    <div class="legal">Solo lo usamos para actualizarte sobre la película. Puedes darte de baja cuando quieras.</div>
   </div>
 </section>
 
 <footer class="col">
   <div class="logos">
-    <img src="films.png" alt="Harakiri Films" height="44">
-    <img src="nau.png" alt="Producciones NAU" height="38">
-    <img src="ventana.png" alt="Ventana" height="15">
+    <img src="films.png" alt="Harakiri Films" style="height:42px">
+    <img src="ventana.png" alt="Ventana" style="height:14px">
+    <img src="nau.png" alt="Producciones NAU" style="height:34px">
   </div>
-  <div class="cred">HARAKIRI, ME HACES FALTA<span>Una película de Alejandro Castro Arias</span></div>
 </footer>
 
 <script>
