@@ -43,10 +43,10 @@ a{color:#D02A18}
       'utm_source=poster&utm_medium=qr&utm_campaign=' + CAMPANA + '&utm_content=' + encodeURIComponent(p);
     location.replace(d);
   };
-  var enviado = false;
-  try { enviado = navigator.sendBeacon && navigator.sendBeacon(FORM, cuerpo); } catch(e){}
-  if (!enviado) { try { fetch(FORM, {method:'POST', mode:'no-cors', body:cuerpo, keepalive:true}); } catch(e){} }
-  setTimeout(ir, 250);
+  var hecho = false;
+  var salir = function(){ if (!hecho) { hecho = true; ir(); } };
+  try { fetch(FORM, {method:'POST', mode:'no-cors', body:cuerpo, keepalive:true}).then(salir, salir); } catch(e){ salir(); }
+  setTimeout(salir, 1200);
 })();
 </script>
 </body>
