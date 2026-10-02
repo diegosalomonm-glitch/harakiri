@@ -120,5 +120,28 @@
   });
   e.addEventListener('input', () => e.setCustomValidity(''));
 </script>
+<script>
+/* Registro anonimo de escaneos y clics (mismo formulario que los carteles) */
+(function(){
+  var FORM='https://docs.google.com/forms/d/e/1FAIpQLSdaSMCu4kBQKcAMswLRxpMMvZa7XL0xBoUcG3i04GG90QF4tQ/formResponse', CAMPO='entry.702382843';
+  var p=(new URLSearchParams(location.search).get('p')||'directo').replace(/[^A-Za-z0-9_-]/g,'').slice(0,20)||'directo';
+  var ua=navigator.userAgent||'';
+  var so=/iPhone|iPad|iPod/.test(ua)?'iOS':/Android/.test(ua)?'Android':/Mac/.test(ua)?'Mac':/Windows/.test(ua)?'Windows':'otro';
+  var idioma=(navigator.language||'').slice(0,5), zona=''; try{zona=Intl.DateTimeFormat().resolvedOptions().timeZone||'';}catch(e){}
+  function reg(ev){
+    var c=new URLSearchParams(); c.append(CAMPO,'__other_option__'); c.append(CAMPO+'.other_option_response',[p,so,idioma,zona,ev].join(' | '));
+    try{ return fetch(FORM,{method:'POST',mode:'no-cors',body:c,keepalive:true}); }catch(e){ return Promise.resolve(); }
+  }
+  reg('resenas');
+  document.querySelectorAll('a.p').forEach(function(a){
+    a.addEventListener('click',function(ev){
+      ev.preventDefault();
+      var ido=false, ir=function(){ if(!ido){ ido=true; location.href=a.href; } };
+      reg('clic-'+(a.getAttribute('aria-label')||'').toLowerCase()).then(ir,ir);
+      setTimeout(ir,900);
+    });
+  });
+})();
+</script>
 </body>
 </html>
